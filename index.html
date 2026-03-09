@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home - Event Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+<h2>Event Portal</h2>
+
+<div class="profile">
+
+<input type="file" id="avatar" accept="image/*">
+
+<img id="preview" src="images/default.png">
+
+<span id="profileName"></span>
+
+</div>
+
+</div>
+
+
+<!-- IMAGE BANNER (instead of video) -->
+<div class="home-banner">
+
+<div class="banner-text">
+<h1>College Event Portal</h1>
+<p>Explore Events | Register | Enjoy</p>
+</div>
+
+</div>
+
+
+<h2 class="title">Upcoming Events</h2>
+
+<div class="event-grid">
+
+<div class="event-card">
+<img src="images/e1.jpg">
+<h3>Tech Fest</h3>
+<button onclick="openEvent('tech')">View Details</button>
+</div>
+
+<div class="event-card">
+<img src="images/e2.jpg">
+<h3>AI Workshop</h3>
+<button onclick="openEvent('ai')">View Details</button>
+</div>
+
+<div class="event-card">
+<img src="images/e3.jpg">
+<h3>Cultural Night</h3>
+<button onclick="openEvent('cultural')">View Details</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

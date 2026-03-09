@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register Event</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+<h2>Event Registration</h2>
+<a href="index.html" style="color:white">Home</a>
+</div>
+
+
+<div class="register-wrapper">
+
+<!-- FORM -->
+<form id="regForm" class="form-card">
+
+<h2 id="selectedEvent">Registering For:</h2>
+
+<input type="text" id="name" placeholder="Enter Full Name" required>
+
+
+<input type="email" id="email" placeholder="Enter Email" required>
+
+
+<input type="password" id="password" placeholder="Enter Password" required>
+
+
+<input type="text" id="mobile" placeholder="Enter Mobile Number" required>
+
+<input type="text" id="college" placeholder="Enter College" required>
+
+
+<button type="submit">Register</button>
+
+</form>
+
+
+<!-- TABLE -->
+<div class="form-card table-card">
+
+<h2>Registered Participants</h2>
+
+<table id="userTable">
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Mobile</th>
+<th>College</th>
+<th>Event</th>
+</tr>
+</thead>
+
+<tbody></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- SUCCESS POPUP -->
+<div id="popup" class="popup">
+<div class="popup-box">
+
+<h2>Registration Successful</h2>
+<p>Your entry has been added.</p>
+
+<button onclick="closePopup()">OK</button>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

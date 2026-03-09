@@ -1,0 +1,298 @@
+/* ================= GLOBAL ================= */
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#667eea,#764ba2);
+min-height:100vh;
+color:white;
+}
+
+/* soft glow background */
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%,rgba(255,255,255,0.2),transparent 40%),
+radial-gradient(circle at 80% 80%,rgba(255,255,255,0.15),transparent 40%);
+z-index:-1;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:500;
+}
+
+
+/* ================= PROFILE ================= */
+
+.profile{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+#preview{
+width:45px;
+height:45px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid white;
+}
+
+.profile input{
+color:white;
+}
+
+
+/* ================= HOME IMAGE BANNER ================= */
+
+.home-banner{
+height:80vh;
+background:url("images/banner.jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+}
+
+/* dark overlay */
+.home-banner::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+}
+
+/* banner text */
+.banner-text{
+position:relative;
+z-index:1;
+color:white;
+}
+
+.banner-text h1{
+font-size:48px;
+margin-bottom:10px;
+animation:fadeUp 1s ease;
+}
+
+.banner-text p{
+font-size:20px;
+opacity:0.9;
+animation:fadeUp 1.5s ease;
+}
+
+
+/* ================= GLASS CARD ================= */
+
+.card,
+.event-card,
+.details-box,
+.form-card{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.3);
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+padding:30px;
+color:white;
+}
+
+
+/* ================= INPUT ================= */
+
+.form-card input{
+width:93%;
+padding:14px;
+margin:10px 0;
+margin-left: 2px;
+margin-right: 2px;
+border:none;
+border-radius:8px;
+outline:none;
+background:rgba(255,255,255,0.25);
+color:white;
+font-size:15px;
+transition:0.3s;
+}
+
+input::placeholder{
+color:#eee;
+}
+
+input:focus{
+background:rgba(255,255,255,0.35);
+box-shadow:0 0 0 2px rgba(255,255,255,0.3);
+}
+
+
+/* ================= BUTTON ================= */
+
+button{
+width:100%;
+padding:14px;
+margin-top:10px;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+background:linear-gradient(45deg,#ff7a18,#ffb347);
+color:white;
+transition:.3s;
+}
+
+button:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+
+/* ================= EVENT GRID ================= */
+
+.event-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:40px;
+}
+
+.event-card{
+text-align:center;
+transition:.4s;
+}
+
+.event-card:hover{
+transform:translateY(-10px) scale(1.03);
+}
+
+.event-card img{
+width:100%;
+height:170px;
+border-radius:12px;
+margin-bottom:10px;
+}
+
+
+/* ================= EVENT DETAILS ================= */
+
+.details-box{
+width:600px;
+margin:auto;
+margin-top:40px;
+text-align:center;
+}
+
+.details-box img{
+width:100%;
+height:300px;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+
+/* ================= REGISTRATION LAYOUT ================= */
+
+.register-wrapper{
+display:flex;
+justify-content:center;
+align-items:flex-start;
+gap:60px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+/* form card width */
+.form-card{
+width:450px;
+}
+
+/* table card */
+.table-card{
+width:700px;
+}
+
+
+/* ================= TABLE ================= */
+
+#userTable{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+table-layout:fixed;
+}
+
+#userTable th,
+#userTable td{
+padding:14px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,0.3);
+word-wrap:break-word;
+}
+
+#userTable th{
+font-weight:600;
+}
+
+/* column sizes */
+#userTable th:nth-child(1){width:18%;}
+#userTable th:nth-child(2){width:28%;}
+#userTable th:nth-child(3){width:16%;}
+#userTable th:nth-child(4){width:18%;}
+#userTable th:nth-child(5){width:20%;}
+
+
+/* ================= POPUP ================= */
+
+.popup{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:15px;
+text-align:center;
+transition:.4s;
+}
+
+.popup.active{
+transform:translate(-50%,-50%) scale(1);
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
